@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230622 19:54:45.738" rpa="false" schemaversion="3">
+<suite id="s1" name="Resources" source="C:\Users\lvinicio\OneDrive - NTT DATA EMEAL\Documentos\Projetos\Job\findajob\resources.robot">
+<test id="s1-t1" name="Abrir Página do Google" line="6">
+<status status="FAIL" starttime="20230622 19:54:46.410" endtime="20230622 19:54:46.412">Test contains no keywords.</status>
+</test>
+<status status="FAIL" starttime="20230622 19:54:45.741" endtime="20230622 19:54:46.433"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Resources">Resources</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
