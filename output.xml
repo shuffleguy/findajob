@@ -1,19 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230622 19:54:45.738" rpa="false" schemaversion="3">
-<suite id="s1" name="Resources" source="C:\Users\lvinicio\OneDrive - NTT DATA EMEAL\Documentos\Projetos\Job\findajob\resources.robot">
-<test id="s1-t1" name="Abrir Página do Google" line="6">
-<status status="FAIL" starttime="20230622 19:54:46.410" endtime="20230622 19:54:46.412">Test contains no keywords.</status>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230623 19:48:04.914" rpa="false" schemaversion="3">
+<suite id="s1" name="Resources" source="C:\Users\lvinicio\OneDrive - NTT DATA EMEAL\Documentos\Projetos\findajob\resources.robot">
+<test id="s1-t1" name="Abrir Página do Google" line="13">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${url_google}</arg>
+<arg>browser=chrome</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230623 19:48:05.223" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<msg timestamp="20230623 19:48:05.239" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230623 19:48:05.222" endtime="20230623 19:48:29.723"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230623 19:48:29.724" endtime="20230623 19:48:29.854"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${pesquisar}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230623 19:48:29.855" endtime="20230623 19:48:29.928"/>
+</kw>
+<status status="PASS" starttime="20230623 19:48:05.220" endtime="20230623 19:48:29.928"/>
 </test>
-<status status="FAIL" starttime="20230622 19:54:45.741" endtime="20230622 19:54:46.433"/>
+<test id="s1-t2" name="Pesquisar NTT" line="18">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pesquisar}</arg>
+<arg>ntt data</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230623 19:48:29.932" level="INFO">Typing text 'ntt data' into text field 'css=#APjFqb'.</msg>
+<status status="PASS" starttime="20230623 19:48:29.931" endtime="20230623 19:48:30.074"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${pesquisar}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230623 19:48:30.076" level="INFO">Sending key(s) ('ENTER',) to css=#APjFqb element.</msg>
+<msg timestamp="20230623 19:48:30.436" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230623 19:48:30.436" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230623 19:48:30.076" endtime="20230623 19:48:33.091"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${input}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230623 19:48:33.093" endtime="20230623 19:48:33.129"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230623 19:48:33.130" level="INFO">Clicking element 'xpath=//h3[text()="NTT DATA: Global IT Services Provider &amp; Consultant"]'.</msg>
+<status status="PASS" starttime="20230623 19:48:33.129" endtime="20230623 19:48:36.057"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=.navbar-expand-md</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230623 19:48:36.057" endtime="20230623 19:48:36.093"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>css=[aria-controls="collapseRight1"]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230623 19:48:36.094" level="INFO">Simulating Mouse Over on element 'css=[aria-controls="collapseRight1"]'.</msg>
+<status status="PASS" starttime="20230623 19:48:36.093" endtime="20230623 19:48:36.410"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://careers.emeal.nttdata.com/s/jobs?language=pt_BR&amp;pcountry=Brasil</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230623 19:48:36.413" level="INFO">Opening url 'https://careers.emeal.nttdata.com/s/jobs?language=pt_BR&amp;pcountry=Brasil'</msg>
+<status status="PASS" starttime="20230623 19:48:36.412" endtime="20230623 19:48:39.835"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230623 19:48:42.837" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230623 19:48:39.836" endtime="20230623 19:48:42.837"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css=#ifrmCookieBanner</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230623 19:48:42.839" level="INFO">Selecting frame 'css=#ifrmCookieBanner'.</msg>
+<status status="PASS" starttime="20230623 19:48:42.838" endtime="20230623 19:48:42.898"/>
+</kw>
+<kw name="Current Frame Should Contain" library="SeleniumLibrary">
+<arg>Accept</arg>
+<doc>Verifies that the current frame contains ``text``.</doc>
+<msg timestamp="20230623 19:48:42.921" level="INFO">Current frame contains text 'Accept'.</msg>
+<status status="PASS" starttime="20230623 19:48:42.900" endtime="20230623 19:48:42.922"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>css=.sp-banner-show</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230623 19:48:42.922" endtime="20230623 19:48:42.953"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=button.evSpRejectBtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230623 19:48:42.955" level="INFO">Clicking element 'css=button.evSpRejectBtn'.</msg>
+<status status="PASS" starttime="20230623 19:48:42.954" endtime="20230623 19:48:43.061"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230623 19:48:48.065" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230623 19:48:43.062" endtime="20230623 19:48:48.065"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>css=.lightning-spinner</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20230623 19:48:48.066" endtime="20230623 19:48:48.097"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>xpath=//div[@class=“container-search cJobOfferFrida” and @data-aura-class=“cJobOfferFrida” and @data-aura-rendered-by=“516:0”]</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<msg timestamp="20230623 19:48:48.470" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-74.png"&gt;&lt;img src="selenium-screenshot-74.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230623 19:48:48.471" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //div[@class=“container-search cJobOfferFrida” and @data-aura-class=“cJobOfferFrida” and @data-aura-rendered-by=“516:0”] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//div[@class=“container-search cJobOfferFrida” and @data-aura-class=“cJobOfferFrida” and @data-aura-rendered-by=“516:0”]' is not a valid XPath expression.
+  (Session info: chrome=114.0.5735.134)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0070A813+48355]
+	(No symbol) [0x0069C4B1]
+	(No symbol) [0x005A5358]
+	(No symbol) [0x005A87A1]
+	(No symbol) [0x005A99E1]
+	(No symbol) [0x005A9A80]
+	(No symbol) [0x005D061C]
+	(No symbol) [0x005D0B3B]
+	(No symbol) [0x005FE26C]
+	(No symbol) [0x005EA784]
+	(No symbol) [0x005FC922]
+	(No symbol) [0x005EA536]
+	(No symbol) [0x005C82DC]
+	(No symbol) [0x005C93DD]
+	GetHandleVerifier [0x0096AABD+2539405]
+	GetHandleVerifier [0x009AA78F+2800735]
+	GetHandleVerifier [0x009A456C+2775612]
+	GetHandleVerifier [0x007951E0+616112]
+	(No symbol) [0x006A5F8C]
+	(No symbol) [0x006A2328]
+	(No symbol) [0x006A240B]
+	(No symbol) [0x00694FF7]
+	BaseThreadInitThunk [0x762BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77C07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77C07A6E+238]
+</msg>
+<status status="FAIL" starttime="20230623 19:48:48.098" endtime="20230623 19:48:48.476"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css=.mainContentArea input.input-search</arg>
+<arg>Texto</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230623 19:48:48.476" endtime="20230623 19:48:48.476"/>
+</kw>
+<status status="FAIL" starttime="20230623 19:48:29.930" endtime="20230623 19:48:48.477">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //div[@class=“container-search cJobOfferFrida” and @data-aura-class=“cJobOfferFrida” and @data-aura-rendered-by=“516:0”] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//div[@class=“container-search cJobOfferFrida” and @data-aura-class=“cJobOfferFrida” and @data-aura-rendered-by=“516:0”]' is not a valid XPath expression.
+  (Session info: chrome=114.0.5735.134)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0070A813+48355]
+	(No symbol) [0x0069C4B1]
+	(No symbol) [0x005A5358]
+	(No symbol) [0x005A87A1]
+	(No symbol) [0x005A99E1]
+	(No symbol) [0x005A9A80]
+	(No symbol) [0x005D061C]
+	(No symbol) [0x005D0B3B]
+	(No symbol) [0x005FE26C]
+	(No symbol) [0x005EA784]
+	(No symbol) [0x005FC922]
+	(No symbol) [0x005EA536]
+	(No symbol) [0x005C82DC]
+	(No symbol) [0x005C93DD]
+	GetHandleVerifier [0x0096AABD+2539405]
+	GetHandleVerifier [0x009AA78F+2800735]
+	GetHandleVerifier [0x009A456C+2775612]
+	GetHandleVerifier [0x007951E0+616112]
+	(No symbol) [0x006A5F8C]
+	(No symbol) [0x006A2328]
+	(No symbol) [0x006A240B]
+	(No symbol) [0x00694FF7]
+	BaseThreadInitThunk [0x762BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77C07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77C07A6E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20230623 19:48:04.918" endtime="20230623 19:48:48.487"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Resources">Resources</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="Resources">Resources</stat>
 </suite>
 </statistics>
 <errors>
